@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <title>JavaScript</title>
+    <style type="text/css">
+    .intro1{
+        background-color: brown;
+    }
+
+    .intro2{
+        background-color: cornflowerblue;
+    }
+    </style>
+</head>
+<body>
+    <p class="intro1" id="intro1">First Pragraph</p>
+    <p class="intro2" id="intro2">Second Pragraph</p>
+
+    <ul>
+        <li> List item 1</li>
+        <li> List item 2</li>
+        <li> List item 3</li>
+    </ul>
+<p id="message"></p>
+
+<input name="customerName" type="text" value="Halis Bay" />
+
+<h1 id="tryIt1"> Try it1</h1>
+<h1 id="tryIt2">  Try it2</h1>
+
+
+<p id="nodes"> Node value</p>
+<div id="div1">
+
+    <p id="p1"> This is p1 </p>
+
+    <p id="p2"> This is p2</p>
+
+</div>
+<script type="text/javascript">
+
+    // *GetElementById*
+    
+/*
+
+    var firstPragraph = document.getElementById("intro1")
+    var message = document.getElementById("message")
+    message.innerHTML = "Message : " + firstPragraph.innerHTML
+    alert("Run getElementById ")
+
+*/
+
+//---------------------------------------------------------------------------------
+    // *GetElementByTagName*
+
+/*
+
+    var allUnorderedLists = document.getElementsByTagName("ul")
+    var unorderedLists= allUnorderedLists[0]
+
+    var allListItems = unorderedLists.getElementsByTagName("li")
+    for (let index = 0; index < allListItems.length; index++) {
+        alert(allListItems[index])
+        
+    }
+*/
+
+//---------------------------------------------------------------------------------
+    // *GetElementsByClassName*
+
+/*
+
+    var allItemsWithClassName = document.getElementsByClassName("intro1")
+    alert(allItemsWithClassName[0].innerHTML)
+
+*/
+
+//---------------------------------------------------------------------------------
+
+    // *QuerySelectorAll*
+
+/*
+
+    var allItemsWithSelector = document.querySelectorAll("p.intro2")
+    alert(allItemsWithSelector[0].innerHTML)
+
+*/
+    
+//---------------------------------------------------------------------------------
+    // *GetElementsByName*
+
+/*
+
+    var getNames = document.getElementsByName("customerName")
+    alert(getNames[0].value)
+
+*/
+//---------------------------------------------------------------------------------
+    // *AddEventListener*
+/*
+
+    document.getElementById("tryIt1").addEventListener("click",changeColor)
+    document.getElementById("tryIt2").addEventListener("click",recolor)
+
+    function changeColor() {
+        
+        document.getElementById("intro1").style.backgroundColor = "green" 
+    }
+    function recolor() {
+        document.getElementById("intro1").style.backgroundColor = "brown"
+        
+    }
+
+
+//---------------------------------------------------------------------------------
+    // *RemoveEventListener*
+
+    document.getElementById("tryIt2").removeEventListener("click",recolor)
+
+*/
+
+//---------------------------------------------------------------------------------
+    // *WorkingWithNodes*
+/*
+    var nodeText = document.getElementById("nodes").childNodes[0].nodeValue
+    alert(nodeText)
+*/
+
+    var heading = document.createElement("h2")
+    var node =document.createTextNode("Hello friends")
+    heading.appendChild(node)
+
+    var div1 = document.getElementById("div1")
+    var p2 = document.getElementById("p2")
+    div1.insertBefore(heading,p2)
+
+    alert("Removing p2")
+    div1.removeChild(p2)
+
+    alert("Replacing")
+    var heading2 = document.createElement("h1")
+    var node2 =document.createTextNode("Hello Replacing Method")
+    heading2.appendChild(node2)
+
+    var p1 = document.getElementById("p1")
+    div1.replaceChild(heading2,p1)
+
+</script>
+
+</body>
+</html>
